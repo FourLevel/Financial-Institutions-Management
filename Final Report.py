@@ -7,11 +7,13 @@ from statsmodels.stats.diagnostic import het_breuschpagan
 from linearmodels.panel import PanelOLS, RandomEffects
 
 # 讀取 Excel 檔案
-file_path = '/Users/ning/Python/Financial Institution/銀行資料_丟迴歸分析_20240523.csv'
+file_path = '銀行資料_丟迴歸分析_20240523.csv'
 data = pd.read_csv(file_path)
 
 # 選擇變數並重命名
-df = data[['公司代碼', '年', 'Z-score', 'ln資產總額', 'ln淨收益', '當季季底P/B', '負債比率', '公司年齡', '董事總持股數%', '經理人總持股%', '是否在金融危機時期', '是否在COVID時期']]
+df = data[['公司代碼', '年', 'Z-score', 'ln資產總額', 'ln淨收益', '當季季底P/B', 
+           '負債比率', '公司年齡', '董事總持股數%', '經理人總持股%', 
+           '是否在金融危機時期', '是否在COVID時期']]
 df.columns = ['id', 'time', 'y', 'x1', 'x2', 'x3', 'x4', 'x5', 'x6', 'x7', 'x8', 'x9']
 
 # 設置 Panel Data
@@ -124,7 +126,7 @@ Random effects coefficients：這是隨機效應模型的估計係數。
 
 ''' 進行隨機效應模型分析 '''
 # 讀取上傳的 CSV 檔案
-file_path = '/Users/ning/Python/Financial Institution/銀行資料_丟迴歸分析_20240523.csv'
+file_path = '銀行資料_丟迴歸分析_20240523.csv'
 data = pd.read_csv(file_path)
 
 # 選擇變數並重命名
@@ -146,7 +148,7 @@ print(random_effects_results.summary)
 '''
 # 進行固定效應模型分析
 # 讀取上傳的 CSV 檔案
-file_path = '/Users/ning/Python/Financial Institution/銀行資料_丟迴歸分析_20240523.csv'
+file_path = '銀行資料_丟迴歸分析_20240523.csv'
 data = pd.read_csv(file_path)
 
 # 選擇變數並重命名
